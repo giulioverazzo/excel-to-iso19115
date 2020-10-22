@@ -163,7 +163,7 @@ dates = {
   "creation" : '''<mdb:dateInfo xmlns:geonet="http://www.fao.org/geonetwork">
       <cit:CI_Date>
          <cit:date>
-            <gco:Date>{0}</gco:Date>
+            <gco:DateTime>{0}</gco:DateTime>
          </cit:date>
          <cit:dateType>
             <cit:CI_DateTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
@@ -173,8 +173,9 @@ dates = {
   </mdb:dateInfo>'''
 }
 
-metadata_id = {
-  "identifier": '''  <mdb:metadataIdentifier>
+metadata_meta = {
+  "main": '''
+   <mdb:metadataIdentifier>
       <mcc:MD_Identifier>
          <mcc:code>
             <gco:CharacterString>{0}</gco:CharacterString>
@@ -183,8 +184,8 @@ metadata_id = {
             <gco:CharacterString>urn:uuid</gco:CharacterString>
          </mcc:codeSpace>
       </mcc:MD_Identifier>
-  </mdb:metadataIdentifier>''',
-  "linkage": '''  <mdb:metadataLinkage xmlns:geonet="http://www.fao.org/geonetwork">
+   </mdb:metadataIdentifier>
+   <mdb:metadataLinkage xmlns:geonet="http://www.fao.org/geonetwork">
       <cit:CI_OnlineResource>
          <cit:linkage>
             <gco:CharacterString>https://nadc-isp.cnr.it/srv/api/records/{0}</gco:CharacterString>
@@ -194,7 +195,8 @@ metadata_id = {
                                        codeListValue="completeMetadata"/>
          </cit:function>
       </cit:CI_OnlineResource>
-  </mdb:metadataLinkage>''' 
+   </mdb:metadataLinkage>
+   '''
 }
 
 resource_lineage = {
@@ -404,7 +406,7 @@ kw_templates = {
   "inspire": '''<mri:descriptiveKeywords>
             <mri:MD_Keywords>
                <mri:keyword>
-                  <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme/ac">Atmospheric conditions</gcx:Anchor>
+                  <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme/ac">{0}</gcx:Anchor>
                </mri:keyword>
                <mri:type>
                   <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -440,7 +442,7 @@ kw_templates = {
   "instruments" : '''<mri:descriptiveKeywords>
             <mri:MD_Keywords>
                <mri:keyword>
-                  <gco:CharacterString>RADIOMETERS</gco:CharacterString>
+                  <gco:CharacterString>{0}</gco:CharacterString>
                </mri:keyword>
                <mri:type>
                   <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -476,7 +478,7 @@ kw_templates = {
   "locations":'''<mri:descriptiveKeywords>
             <mri:MD_Keywords>
                <mri:keyword>
-                  <gco:CharacterString>ANTARCTICA</gco:CharacterString>
+                  <gco:CharacterString>{0}</gco:CharacterString>
                </mri:keyword>
                <mri:type>
                   <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -512,10 +514,7 @@ kw_templates = {
   "platforms":'''<mri:descriptiveKeywords>
             <mri:MD_Keywords>
                <mri:keyword>
-                  <gco:CharacterString>GROUND-BASED OBSERVATIONS</gco:CharacterString>
-               </mri:keyword>
-               <mri:keyword>
-                  <gco:CharacterString>GROUND STATIONS</gco:CharacterString>
+                  <gco:CharacterString>{0}</gco:CharacterString>
                </mri:keyword>
                <mri:type>
                   <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -551,10 +550,7 @@ kw_templates = {
   "sciencekeywords":'''<mri:descriptiveKeywords>
             <mri:MD_Keywords>
                <mri:keyword>
-                  <gco:CharacterString>IRRADIANCE</gco:CharacterString>
-               </mri:keyword>
-               <mri:keyword>
-                  <gco:CharacterString>SOLAR IRRADIANCE</gco:CharacterString>
+                  <gco:CharacterString>{0}</gco:CharacterString>
                </mri:keyword>
                <mri:type>
                   <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -590,7 +586,7 @@ kw_templates = {
   "providers":'''<mri:descriptiveKeywords>
             <mri:MD_Keywords>
                <mri:keyword>
-                  <gco:CharacterString>IT/PNRA</gco:CharacterString>
+                  <gco:CharacterString>{0}</gco:CharacterString>
                </mri:keyword>
                <mri:type>
                   <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -626,7 +622,7 @@ kw_templates = {
   "chronounits": '''<mri:descriptiveKeywords>
             <mri:MD_Keywords>
                <mri:keyword>
-                  <gco:CharacterString>EARLY</gco:CharacterString>
+                  <gco:CharacterString>{0}</gco:CharacterString>
                </mri:keyword>
                <mri:type>
                   <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"

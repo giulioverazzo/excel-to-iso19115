@@ -40,7 +40,7 @@ class Data:
     self.end_date = self.sheet['B14'].value
     self.topic_category = self.sheet['B16'].value
     self.inspire_themes = self.sheet['B17'].value
-    self.keywords = self.sheet['B18']
+    self.keywords = self.sheet['B18'].value
     self.project_license = self.sheet['B20'].value
     self.pnra_project_code = self.sheet['B22'].value
     self.expedition_number = self.sheet['B23'].value
