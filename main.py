@@ -7,5 +7,9 @@ if __name__ == "__main__":
   sheet=wb.worksheets[0]
 
   my_data = Data(sheet)
-  generate_XML(my_data)
+  XMLGenerated = generate_XML(my_data)
+
+  filename = "metadata.xml"
+  with open(filename, 'w') as file_object:
+    file_object.write(XMLGenerated)
   

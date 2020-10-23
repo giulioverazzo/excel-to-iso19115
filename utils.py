@@ -4,6 +4,24 @@ from xml.etree import ElementTree as ET
 from xml_templates.templates import root, dates, metadata_meta, resource_lineage, distribution_info, identification_info, kw_templates
 import uuid
 from datetime import datetime
+from xml_templates.inspire import inspire_themes_anchors
+
+def camelize(string):
+  # remove leading and trailing white space
+  string = string.strip()
+
+  # lowercase everything
+  string = string.lower()
+
+  # Split on all spaces
+  string = string.split(" ")
+
+  # capitalize first letter of all except first item
+  capitalized = list(map((lambda x: x.capitalize()),string[1:]))
+
+  camelized = string[0]+"".join(capitalized)
+  return camelized
+
 
 def keyword_search(keyword):
   chrono_units = 'https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/chronounits/?format=json'
@@ -49,7 +67,8 @@ def generate_XML(data):
   resourceLineage = resource_lineage['main'].format(data.data_lineage)
   
   # Metadata uuid and linkage
-  metadataMeta = metadata_meta['main'].format(uuid.uuid1())
+  meta_uuid = uuid.uuid1()
+  metadataMeta = metadata_meta['main'].format(meta_uuid)
   
   # distribution info
   transferOptions = ""
@@ -64,6 +83,36 @@ def generate_XML(data):
   for keyword in keywords:
     k_obj = keyword_search(keyword)
     keywordsXML += kw_templates[k_obj['thesaurus']].format(k_obj['word'])+"\n"
+  
+  keywordsXML += kw_templates['inspire'].format(inspire_themes_anchors[data.inspire_themes], data.inspire_themes)
 
+  ## Persons ##
+  principalInvestigator = identification_info['person'].format("principalInvestigator", data.pi_org, data.pi_email, data.pi_name)
+  pointOfContact = identification_info['person'].format("pointOfContact", data.poc_org, data.poc_email, data.poc_name)
   
-  
+  # identification_info
+  identificationInfo = identification_info['main'].format(
+    data.title,
+    meta_uuid,
+    data.abstract,
+    camelize(data.status),
+    principalInvestigator+"\n"+pointOfContact,
+    data.topic_category,
+    keywordsXML,
+    data.project_license,
+    data.pnra_project_code
+  )
+
+  # root
+  XMLMetadata = root['main'].format(
+    (
+      creationDate+"\n"+
+      revisionDate+"\n"+ 
+      resourceLineage+"\n"+
+      metadataMeta+"\n"+
+      distributionInfo+"\n"+
+      identificationInfo+"\n"
+    )
+  )
+
+  return XMLMetadata
