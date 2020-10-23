@@ -10,4 +10,4 @@ The script will output a file named `name-of-excel-file.xml` that can be importe
 
 # Note
 
-The script is a bit slow because it search for keywords occurrences in Nasa's GCMD. So its performances depends on how namy keywords there are in the excel file.
+The script is a bit slow because it search for keywords occurrences in Nasa's GCMD. So its performances depends on how many keywords there are in the excel file.
