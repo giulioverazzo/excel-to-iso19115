@@ -146,7 +146,7 @@
   <mdb:dateInfo xmlns:geonet="http://www.fao.org/geonetwork">
       <cit:CI_Date>
          <cit:date>
-            <gco:DateTime>2020-10-23T12:51:14</gco:DateTime>
+            <gco:DateTime>2020-10-23T14:25:03</gco:DateTime>
          </cit:date>
          <cit:dateType>
             <cit:CI_DateTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
@@ -157,7 +157,7 @@
 <mdb:dateInfo>
       <cit:CI_Date>
          <cit:date>
-            <gco:DateTime>2020-10-23T12:51:14</gco:DateTime>
+            <gco:DateTime>2020-10-23T14:25:03</gco:DateTime>
          </cit:date>
          <cit:dateType>
             <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
@@ -184,7 +184,7 @@
    <mdb:metadataIdentifier>
       <mcc:MD_Identifier>
          <mcc:code>
-            <gco:CharacterString>abd78a1e-151d-11eb-a160-03a1911e4ac2</gco:CharacterString>
+            <gco:CharacterString>c6f2bdca-152a-11eb-a160-03a1911e4ac2</gco:CharacterString>
          </mcc:code>
          <mcc:codeSpace>
             <gco:CharacterString>urn:uuid</gco:CharacterString>
@@ -194,7 +194,7 @@
    <mdb:metadataLinkage xmlns:geonet="http://www.fao.org/geonetwork">
       <cit:CI_OnlineResource>
          <cit:linkage>
-            <gco:CharacterString>https://nadc-isp.cnr.it/srv/api/records/abd78a1e-151d-11eb-a160-03a1911e4ac2</gco:CharacterString>
+            <gco:CharacterString>https://nadc-isp.cnr.it/srv/api/records/c6f2bdca-152a-11eb-a160-03a1911e4ac2</gco:CharacterString>
          </cit:linkage>
          <cit:function>
             <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
@@ -255,7 +255,7 @@
                <cit:identifier>
                   <mcc:MD_Identifier>
                      <mcc:code>
-                        <gcx:Anchor xlink:href="https://nadc-isp.cnr.it/srv/api/records/abd78a1e-151d-11eb-a160-03a1911e4ac2">https://nadc-isp.cnr.it/srv/api/records/abd78a1e-151d-11eb-a160-03a1911e4ac2</gcx:Anchor>
+                        <gcx:Anchor xlink:href="https://nadc-isp.cnr.it/srv/api/records/c6f2bdca-152a-11eb-a160-03a1911e4ac2">https://nadc-isp.cnr.it/srv/api/records/c6f2bdca-152a-11eb-a160-03a1911e4ac2</gcx:Anchor>
                      </mcc:code>
                   </mcc:MD_Identifier>
                </cit:identifier>
