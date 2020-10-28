@@ -351,6 +351,26 @@ identification_info = {
                </mri:initiativeType>
             </mri:MD_AssociatedResource>
          </mri:associatedResource>
+         <mri:associatedResource>
+            <mri:MD_AssociatedResource>
+               <mri:name>
+                  <cit:CI_Citation>
+                     <cit:title>
+                        <gco:CharacterString>{9}</gco:CharacterString>
+                     </cit:title>
+                     <cit:identifier/>
+                  </cit:CI_Citation>
+               </mri:name>
+               <mri:associationType>
+                  <mri:DS_AssociationTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#DS_AssociationTypeCode"
+                                              codeListValue="dependency"/>
+               </mri:associationType>
+               <mri:initiativeType>
+                  <mri:DS_InitiativeTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#DS_InitiativeTypeCode"
+                                             codeListValue="campaign"/>
+               </mri:initiativeType>
+            </mri:MD_AssociatedResource>
+         </mri:associatedResource>
          <mri:defaultLocale>
             <lan:PT_Locale>
                <lan:language>
@@ -362,6 +382,39 @@ identification_info = {
                </lan:characterEncoding>
             </lan:PT_Locale>
          </mri:defaultLocale>
+         <mri:supplementalInformation>
+            <gco:CharacterString>{10}</gco:CharacterString>
+         </mri:supplementalInformation>
+         <mri:extent>
+            <gex:EX_Extent>
+               <gex:geographicElement>
+                  <gex:EX_GeographicBoundingBox>
+                     <gex:westBoundLongitude>
+                        <gco:Decimal>164.00</gco:Decimal>
+                     </gex:westBoundLongitude>
+                     <gex:eastBoundLongitude>
+                        <gco:Decimal>164.00</gco:Decimal>
+                     </gex:eastBoundLongitude>
+                     <gex:southBoundLatitude>
+                        <gco:Decimal>-74.00</gco:Decimal>
+                     </gex:southBoundLatitude>
+                     <gex:northBoundLatitude>
+                        <gco:Decimal>-74.00</gco:Decimal>
+                     </gex:northBoundLatitude>
+                  </gex:EX_GeographicBoundingBox>
+               </gex:geographicElement>
+               <gex:temporalElement>
+                  <gex:EX_TemporalExtent>
+                     <gex:extent>
+                        <gml:TimePeriod gml:id="IDcd3b1c4f-b5f7-439a-afc4-3317a4cd89be">
+                           <gml:beginPosition>{11}</gml:beginPosition>
+                           <gml:endPosition>{12}</gml:endPosition>
+                        </gml:TimePeriod>
+                     </gex:extent>
+                  </gex:EX_TemporalExtent>
+               </gex:temporalElement>
+            </gex:EX_Extent>
+         </mri:extent>
       </mri:MD_DataIdentification>
   </mdb:identificationInfo>''',
   "person":'''<mri:pointOfContact>

@@ -14,6 +14,7 @@ if __name__ == "__main__":
   XMLGenerated = generate_XML(my_data)
 
   filename = (".".join(excelfile.split(".")[:-1]))+".xml"
+  
   with open(filename, 'w') as file_object:
     file_object.write(XMLGenerated)
   

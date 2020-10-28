@@ -72,7 +72,7 @@ def generate_XML(data):
   
   # distribution info
   transferOptions = ""
-  if data.ext_resource != "":
+  if data.ext_resource != None:
     transferOptions = distribution_info['transfer_option'].format(data.ext_resource)
   
   distributionInfo = distribution_info['main'].format(data.type_of_data, transferOptions)
@@ -82,13 +82,20 @@ def generate_XML(data):
   keywordsXML = ""
   for keyword in keywords:
     k_obj = keyword_search(keyword)
-    keywordsXML += kw_templates[k_obj['thesaurus']].format(k_obj['word'])+"\n"
+    if k_obj != None:
+      keywordsXML += kw_templates[k_obj['thesaurus']].format(k_obj['word'])+"\n"
   
   keywordsXML += kw_templates['inspire'].format(inspire_themes_anchors[data.inspire_themes], data.inspire_themes)
 
   ## Persons ##
-  principalInvestigator = identification_info['person'].format("principalInvestigator", data.pi_org, data.pi_email, data.pi_name)
-  pointOfContact = identification_info['person'].format("pointOfContact", data.poc_org, data.poc_email, data.poc_name)
+  principalInvestigator = ""
+
+  if data.pi_org != None and data.pi_email != None and data.pi_name != None:
+    principalInvestigator = identification_info['person'].format("principalInvestigator", data.pi_org, data.pi_email, data.pi_name)
+  
+  pointOfContact = ""
+  if data.poc_org != None and data.poc_email != None and data.poc_name != None:
+    pointOfContact = identification_info['person'].format("pointOfContact", data.poc_org, data.poc_email, data.poc_name)
   
   # identification_info
   identificationInfo = identification_info['main'].format(
@@ -100,7 +107,11 @@ def generate_XML(data):
     data.topic_category,
     keywordsXML,
     data.project_license,
-    data.pnra_project_code
+    data.pnra_project_code,
+    data.expedition_number,
+    data.other,
+    data.begin_date or "",
+    data.end_date or ""
   )
 
   # root
