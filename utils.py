@@ -11,6 +11,9 @@ def camelize(string):
   # remove leading and trailing white space
   string = string.strip()
 
+  # remove commas
+  string = string.replace(",","")
+
   # lowercase everything
   string = string.lower()
 
