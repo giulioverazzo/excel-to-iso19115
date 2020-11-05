@@ -5,10 +5,14 @@ from xml_templates.templates import root, dates, metadata_meta, resource_lineage
 import uuid
 from datetime import datetime
 from xml_templates.inspire import inspire_themes_anchors
+from thesaurus_utils import keyword_search
 
 def camelize(string):
   # remove leading and trailing white space
   string = string.strip()
+
+  # remove commas
+  string = string.replace(",","")
 
   # lowercase everything
   string = string.lower()
@@ -21,40 +25,6 @@ def camelize(string):
 
   camelized = string[0]+"".join(capitalized)
   return camelized
-
-
-def keyword_search(keyword):
-  chrono_units = 'https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/chronounits/?format=json'
-  instruments = 'https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments/?format=json'
-  locations = 'https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/locations/?format=json'
-  platforms = 'https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms/?format=json'
-  providers = 'https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/providers/?format=json'
-  science_keywords = 'https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords/?format=json'
-  
-  urls = [chrono_units, instruments, locations, platforms, providers, science_keywords]
-  words = []
-  for url in urls:
-    r = requests.get(url)
-    if r.status_code != 200:
-      print("ERROR ON: "+url)
-      print("Error status code:"+r.status_code)
-    else:
-      keywords = r.json()['concepts']
-      for k_obj in keywords:
-        k = k_obj['prefLabel']
-        words.append({"word":k, "thesaurus":get_thesaurus_name(url)})
-  
-  closest = difflib.get_close_matches(keyword.upper(), list(map((lambda x: x['word']),words)))
-  if len(closest) != 0:
-    k_found = closest[0]
-    k_obj = list(filter((lambda x: x['word'].upper() == k_found.upper()),words))[0]
-    print(k_obj)
-    return k_obj
-  else:
-    print('No matches found')
-
-def get_thesaurus_name(url):
- return url.split('/')[-2]
 
 def generate_XML(data):
 
@@ -104,7 +74,7 @@ def generate_XML(data):
     data.abstract,
     camelize(data.status),
     principalInvestigator+"\n"+pointOfContact,
-    data.topic_category,
+    camelize(data.topic_category),
     keywordsXML,
     data.project_license,
     data.pnra_project_code,

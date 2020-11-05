@@ -707,5 +707,41 @@ kw_templates = {
                   </cit:CI_Citation>
                </mri:thesaurusName>
             </mri:MD_Keywords>
+         </mri:descriptiveKeywords>''',
+   "nasa":'''<mri:descriptiveKeywords>
+            <mri:MD_Keywords>
+               <mri:keyword>
+                  <gco:CharacterString>{0}</gco:CharacterString>
+               </mri:keyword>
+               <mri:type>
+                  <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </mri:type>
+               <mri:thesaurusName>
+                  <cit:CI_Citation>
+                     <cit:title>
+                        <gcx:Anchor xlink:href="http://custom.shared.obj.ch/concept#">NASA Thesaurus</gcx:Anchor>
+                     </cit:title>
+                     <cit:date>
+                        <cit:CI_Date>
+                           <cit:date>
+                              <gco:Date>2020-06-22</gco:Date>
+                           </cit:date>
+                           <cit:dateType>
+                              <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </cit:dateType>
+                        </cit:CI_Date>
+                     </cit:date>
+                     <cit:identifier>
+                        <mcc:MD_Identifier>
+                           <mcc:code>
+                              <gcx:Anchor xlink:href="https://nadc-isp.cnr.it/srv/eng/thesaurus.download?ref=external.theme.nasa-thesaurus-alpha">geonetwork.thesaurus.external.theme.nasa-thesaurus-alpha</gcx:Anchor>
+                           </mcc:code>
+                        </mcc:MD_Identifier>
+                     </cit:identifier>
+                  </cit:CI_Citation>
+               </mri:thesaurusName>
+            </mri:MD_Keywords>
          </mri:descriptiveKeywords>'''
 } 
