@@ -9,6 +9,8 @@ First install the requirements with:
 Then run like this:  
 `python3 convert.py name-of-excel-file.xlsx`
 
+The script is tailored to only read the `metadata-template.xlsx` file so, make a copy of it, change the value as needed and then proceed to convert it in xml.
+
 The script will output a file named `name-of-excel-file.xml` that can be imported in Geonetwork 3.x
 
 # Note
