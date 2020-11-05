@@ -3,7 +3,10 @@ A python script for convert and validate excel file to xml in iso19115 metadata 
 
 # Usage
 
-Run like this:  
+First install the requirements with:
+`pip install -r requirements.txt`
+
+Then run like this:  
 `python3 convert.py name-of-excel-file.xlsx`
 
 The script will output a file named `name-of-excel-file.xml` that can be imported in Geonetwork 3.x
